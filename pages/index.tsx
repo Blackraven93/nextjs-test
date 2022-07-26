@@ -23,7 +23,31 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white p-10 rounded-3xl mb-10 shadow-xl"></div>
+      <div className="bg-white p-10 rounded-3xl mb-10 shadow-xl">
+        <div>
+          <div className="flex justify-between">
+            <span>Profile</span>
+            <div>CartImg</div>
+          </div>
+        </div>
+        <div>profileImg</div>
+        <div>
+          <div>
+            <div>
+              <span>Orders</span>
+              <span>340</span>
+            </div>
+            <div>
+              <span>Spent</span>
+              <span>$2,310</span>
+            </div>
+          </div>
+          <div>
+            <span>Tony Molloy</span>
+            <span>New York, USA</span>
+          </div>
+        </div>
+      </div>
       <div className="bg-white p-10 rounded-3xl mb-10 shadow-xl"></div>
       <div className="bg-white p-10 rounded-3xl mb-10 shadow-xl"></div>
     </div>
