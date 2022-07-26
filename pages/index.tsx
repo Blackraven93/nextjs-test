@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-slate-400 py-20 px-20 grid gap-10">
+    <div className="bg-slate-400 py-20 px-20 grid gap-10 min-h-screen">
       <div className="bg-white p-8 rounded-3xl mb-10 shadow-xl">
         <span className="font-semibold text-3xl">Select Item</span>
         <div className="flex justify-between my-2">
@@ -48,40 +48,49 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+
       <div className="flex flex-col bg-white p-10 rounded-3xl mb-10 shadow-xl">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center mb-10">
           <span>⬅️</span>
-          <div className="flex justify-between w-1/6">
-            <div>
+          <div className="flex justify-between w-1/6 space-x-3">
+            <div className="">
               <span>⭐️</span>
               <span>4.9</span>
             </div>
-            <span>❤️</span>
+            <span className="shadow-xl p-2 rounded-md">❤️</span>
           </div>
         </div>
-        <div>box</div>
-        <div>
-          <span>Swoon Lounge</span>
-          <span>Chair</span>
-          <div>
-            <input type="radio" />
-            <input type="radio" />
-            <input type="radio" />
+        <div className="bg-zinc-400 h-72 mb-5"></div>
+        <div className="">
+          <div className="flex flex-col mb-3 mt-5">
+            <span className="font-medium mb-1.5 text-xl">Swoon Lounge</span>
+            <span className="text-xs text-gray-500">Chair</span>
           </div>
-          <div>
-            <div>
-              <div>➖</div>
+          <div className="flex justify-between items-center">
+            <div className="flex justify-between w-2/12">
+              <input type="radio" />
+              <input type="radio" />
+              <input type="radio" />
+            </div>
+
+            <div className="flex items-center justify-between w-3/12">
+              <div className="p-1.5 w-8 bg-blue-200 flex justify-center items-center aspect-square w-10 text-xl text-gray-500 font-medium rounded-xl">
+                -
+              </div>
               <span>1</span>
-              <div>➕</div>
+              <div className="p-1.5 w-8 bg-blue-200 flex justify-center items-center aspect-square w-10 text-xl text-gray-500 font-medium rounded-xl">
+                +
+              </div>
             </div>
           </div>
         </div>
-        <div>
-          <span>$450</span>
-          <div>Add to cart</div>
+        <div className="flex justify-between items-center mt-5  ">
+          <span className="font-medium text-2xl">$450</span>
+          <div className="bg-blue-500 text-center py-2 px-12 text-white text-sm rounded-lg">
+            Add to cart
+          </div>
         </div>
       </div>
-      <div className="bg-white p-10 rounded-3xl mb-10 shadow-xl"></div>
     </div>
   );
 };
