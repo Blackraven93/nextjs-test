@@ -17,3 +17,4 @@
 6. tailwind block
 7. grid
 8. portrait
+9. config: darkMode
