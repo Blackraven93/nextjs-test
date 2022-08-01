@@ -15,3 +15,5 @@
 4. css aspect-ratio (tailwind: aspect-square) : 정사각형으로 만들어줌
 5. space-x-number
 6. tailwind block
+7. grid
+8. portrait
