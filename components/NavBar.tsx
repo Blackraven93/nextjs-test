@@ -7,12 +7,12 @@ const NavBar: NextPage = () => {
   return (
     <nav>
       <Link href="/">
-        <a className="home" style={{ color: router.pathname === '/' ? 'teal' : 'tomato' }}>
+        <a className={router.pathname === "/" ? 'active' : ""} >
           Home
         </a>
       </Link>
       <Link href="/about">
-        <a className="about" style={{ color: router.pathname === '/about' ? 'teal' : 'tomato' }}>
+      <a className={router.pathname === "/about" ? 'active' : ""} >
           About
         </a>
       </Link>
