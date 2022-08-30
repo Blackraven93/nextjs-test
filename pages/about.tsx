@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 const aBout: NextPage = () => {
   return (
     <>
-      <SEO title='about'></SEO>
+      <SEO title='About'></SEO>
       <h1>About</h1>
     </>
   );
