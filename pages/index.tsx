@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-no-undef */;
-import { NextPage } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import SEO from '../components/SEO';
 
 interface IMovie {
@@ -22,20 +21,13 @@ interface IMovie {
   vote_count:number
 }
 
-const Home: NextPage = () => {
-  const [movies, setMovies] = useState<IMovie[] | []>([])
-  useEffect(() => {
-    (async () => {
-      const { results } = await (await fetch(`/api/movies`)).json();
-      console.log(results)
-      setMovies(results)
-    })();
-  }, [])
+
+const Home: NextPage = ({ results }: InferGetServerSidePropsType<GetServerSideProps>) => {
+  
   return (
     <div className='container'>
       <SEO title="Home"></SEO>
-      {!movies && <h4>Loading...</h4>}
-      {movies?.map((movie:IMovie) => (
+      {results?.map((movie:IMovie) => (
         <div className="movie" key={movie.id}>
         <Image 
           className='img'
@@ -71,5 +63,14 @@ const Home: NextPage = () => {
   )
 };
 
-
 export default Home;
+
+// Only Server Side
+export const getServerSideProps: GetServerSideProps =  async () => {
+  const { results } = await (await fetch(`http://localhost:3000/api/movies`)).json();
+  return {
+    props: {
+      results,
+    },
+  };
+}
